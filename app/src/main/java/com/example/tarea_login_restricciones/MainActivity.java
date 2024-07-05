@@ -23,6 +23,11 @@ public class MainActivity extends AppCompatActivity {
         passwordEditText = findViewById(R.id.passwordEditText);
         loginButton = findViewById(R.id.loginButton);
 
+        // Set hints from string resources
+        emailEditText.setHint(R.string.email_hint);
+        passwordEditText.setHint(R.string.password_hint);
+        loginButton.setText(R.string.login_button_text);
+
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -31,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
 
                 if (validateEmail(email) && validatePassword(password)) {
                     // Proceder con el login
-                    Toast.makeText(MainActivity.this, "Login successful", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, R.string.login_success_message, Toast.LENGTH_SHORT).show();
                     // Iniciar PostLogin activity
                     Intent intent = new Intent(MainActivity.this, PostLogin.class);
                     startActivity(intent);
@@ -42,19 +47,19 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validateEmail(String email) {
         if (email.isEmpty()) {
-            emailEditText.setError("Email es requerido");
+            emailEditText.setError(getString(R.string.email_required));
             return false;
         }
         if (!email.contains("@")) {
-            emailEditText.setError("Formato de email inválido");
+            emailEditText.setError(getString(R.string.invalid_email_format));
             return false;
         }
         if (!email.endsWith(".cl") && !email.endsWith(".com")) {
-            emailEditText.setError("Debe tener '@' y terminar en '.cl' o '.com'");
+            emailEditText.setError(getString(R.string.email_must_contain_at));
             return false;
         }
         if (email.indexOf('@') == 0) {
-            emailEditText.setError("Email no debe empezar con @");
+            emailEditText.setError(getString(R.string.email_cannot_start_with_at));
             return false;
         }
         return true;
@@ -62,20 +67,20 @@ public class MainActivity extends AppCompatActivity {
 
     private boolean validatePassword(String password) {
         if (password.isEmpty()) {
-            passwordEditText.setError("Es necesaria la contraseña");
+            passwordEditText.setError(getString(R.string.password_required));
             return false;
         }
 
-        char[] forbiddenCharacters = {'*', '+', '-', '/', '%', '(',')','$','#','!','¡','<','>','?','¿'};
+        char[] forbiddenCharacters = {'*', '+', '-', '/', '%', '(', ')', '$', '#', '!', '¡', '<', '>', '?', '¿'};
         for (char c : password.toCharArray()) {
             for (char forbiddenChar : forbiddenCharacters) {
                 if (c == forbiddenChar) {
-                    passwordEditText.setError("La contraseña no puede contener los símbolos como estos '*', '+', '-', '/', '%'");
+                    passwordEditText.setError(getString(R.string.password_no_special_symbols));
                     return false;
                 }
             }
             if (!Character.isLetterOrDigit(c)) {
-                passwordEditText.setError("La contraseña debe ser alfanumérica y no puede contener caracteres especiales");
+                passwordEditText.setError(getString(R.string.password_alphanumeric));
                 return false;
             }
         }

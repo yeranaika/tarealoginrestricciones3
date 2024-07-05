@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">TareaLoginRestricciones</string>
+    <string name="login_success_message">Te has logeado</string>
+    <string name="logout_button_text">Salir</string>
+    <string name="email_required">Email es requerido</string>
+    <string name="invalid_email_format">Formato de email inválido</string>
+    <string name="email_must_contain_at">Debe tener @ y terminar en .cl o .com</string>
+    <string name="email_cannot_start_with_at">Email no debe empezar con @</string>
+    <string name="password_required">Es necesaria la contraseña</string>
+    <string name="password_alphanumeric">La contraseña debe ser alfanumérica y no puede contener caracteres especiales</string>
+    <string name="password_no_special_symbols">La contraseña no puede contener los símbolos * + - / %</string>
+    <string name="email_hint">Correo Electrónico</string>
+    <string name="password_hint">Contraseña</string>
+    <string name="login_button_text">Iniciar Sesión</string>
+</resources>

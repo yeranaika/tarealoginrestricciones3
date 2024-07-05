@@ -17,6 +17,9 @@ public class PostLogin extends AppCompatActivity {
 
         loginSalirButton = findViewById(R.id.loginSalir);
 
+        // Set text from string resources
+        loginSalirButton.setText(R.string.logout_button_text);
+
         loginSalirButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

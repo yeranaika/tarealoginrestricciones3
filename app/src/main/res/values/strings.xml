@@ -1,5 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">TareaLoginRestricciones</string>
-    <string name="login_success_message">Te has logeado</string>
-    <string name="logout_button_text">Salir</string>
+    <string name="app_name">TaskLoginRestrictions</string>
+    <string name="login_success_message">You have logged in</string>
+    <string name="logout_button_text">Logout</string>
+    <string name="email_required">Email is required</string>
+    <string name="invalid_email_format">Invalid email format</string>
+    <string name="email_must_contain_at">Email must contain @ and end with .cl or .com</string>
+    <string name="email_cannot_start_with_at">Email cannot start with @</string>
+    <string name="password_required">Password is required</string>
+    <string name="password_alphanumeric">Password must be alphanumeric and cannot contain special characters</string>
+    <string name="password_no_special_symbols">Password cannot contain the symbols * + - / %</string>
+    <string name="email_hint">Email</string>
+    <string name="password_hint">Password</string>
+    <string name="login_button_text">Login</string>
 </resources>
