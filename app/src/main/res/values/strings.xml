@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TareaLoginRestricciones</string>
+    <string name="login_success_message">Te has logeado</string>
+    <string name="logout_button_text">Salir</string>
+</resources>
